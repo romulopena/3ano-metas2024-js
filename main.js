@@ -60,4 +60,4 @@ function comecaCronometro(){
     setInterval(atualizaCronometro,1000); //metodo que usa o parametro de atualização de 1 em 1 seg
 }
 
-comecaCronometro();
+//comecaCronometro();
