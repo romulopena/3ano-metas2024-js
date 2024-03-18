@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
 
 :root {
     --cor-de-fundo: #1E1E1E;
     --verde: #6FFF57;
     --branco: #FFFFFF;
     --botao-ativo: #3A375E;
-    --botao-inativo: #3a375e80;
-    --texto-fundo: #3a375e4d;
+    --botao-inativo: rgba(58, 55, 94, 0.5);
+    --texto-fundo: rgba(58, 55, 94, 0.3);
 }
 
-body{
+body {
     background-color: var(--cor-de-fundo);
     color: var(--branco);
     font-family: 'Chakra Petch', sans-serif;
 }
+
 
 .conteudo-principal {
     display: flex;
@@ -35,8 +36,9 @@ body{
     color: var(--verde);
 }
 
+
 .botao {
-    font-family: "Crakra Petch", sans-serif;
+    font-family: 'Chakra Petch', sans-serif;
     background-color: var(--botao-inativo);
     color: var(--branco);
     display: flex;
@@ -45,19 +47,20 @@ body{
     font-size: 18px;
     align-items: center;
     width: 100%;
-
-    border-bottom: 4px solid var(--botao-ativo); 
-    border-left: 2px solid var(--botao-ativo); 
-    border-right: 2px solid var(--botao-ativo); 
+    border-bottom: 4px solid var(--botao-ativo);
+    border-left: 2px solid var(--botao-ativo);
+    border-right: 2px solid var(--botao-ativo);
     border-top: none;
+}
 
+.botao:first-child {
+    border-radius: 40px 40px 0 0;
 }
 
 .botoes {
     display: block;
 }
 
-/*Aula 03*/
 .botao.ativo{
     background-color: var(--botao-ativo);
     border-bottom: 4px solid var(--verde);
@@ -68,9 +71,8 @@ body{
     padding: 40px;
     border-radius: 0 0 40px 40px;
 }
-
 .aba-conteudo.ativo{
-    display: block;
+    display:block;
 }
 
 .aba-conteudo{
@@ -82,31 +84,13 @@ body{
     text-align: center;
 }
 .aba-conteudo-titulo-secundario{
-    font-size: 28px;
     text-align: center;
     color: var(--verde);
     text-transform: uppercase;
 }
-
 .contador{
-    display: flex;
-    justify-content: center;
-}
-
-.contador-digito{
-    padding: 0 16px;
-    text-align: center;
-    flex-wrap: wrap;
-    min-width: 100px;
-}
-.contador-digito-numero{
-    font-size: 80px;
-    margin: 0;
-}
-.contador-digito-texto{
-    color: var(--verde);
     font-size: 20px;
-    margin: 0;
+    text-align: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -115,22 +99,10 @@ body{
     }
 
     .botao:first-child {
-        border-radius: 40px 40px 0 0;
-    
+        border-radius: 40px 0 0 0;
     }
-    
-    @media screen and (min-width: 768px) {
-        .botoes {
-            display: flex;
-        }
-    
-        .botao:first-child {
-            border-radius: 40px 0 0 0;
-        }
-    
-        .botao:last-child {
-            border-radius: 0 40px 0 0;
-        }
+
+    .botao:last-child {
+        border-radius: 0 40px 0 0;
     }
-        
 }

@@ -1,5 +1,4 @@
 const botoes = document.querySelectorAll(".botao");
-//console.log(botoes);;
 const textos = document.querySelectorAll(".aba-conteudo");
 
 //laço de repetição para adicionar a seleção das abas ao clicar.
@@ -12,7 +11,6 @@ for (let i= 0; i <botoes.length;i++){
         botoes[i].classList.add("ativo");
         textos[i].classList.add("ativo");
     }
-    console.log();
 }
 
 //declaração dos objetivos por data.
@@ -25,18 +23,10 @@ const tempoObjetivo4 = new Date("2024-08-10T00:00:00");
 //criação da lista dos contadores de tempo dos objetivos
 const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3,tempoObjetivo4];
 
-// Função atualiza cronometro com um laço de repetição para chamada dos tempos de objetivos por meio de um contador i
-function atualizaCronometro(){
-    for(let i = 0; i < contadores.length; i++){
-        contadores[i].textContent = calculaTempo(tempos[i]);
-    }
-
-}
-
 //função que calcula os objetivos por variáveis
-function calculaTempo(tempoObjetivo1){
+function calculaTempo(tempoObjetivo){
     let tempoAtual = new Date();
-    let tempoFinal = tempoObjetivo1 - tempoAtual;
+    let tempoFinal = tempoObjetivo - tempoAtual;
     let segundos = Math.floor(tempoFinal/1000);
     let minutos = Math.floor(segundos/60);
     let horas = Math.floor(minutos/60);
@@ -54,10 +44,17 @@ function calculaTempo(tempoObjetivo1){
     }
 }
 
+// Função atualiza cronometro com um laço de repetição para chamada dos tempos de objetivos por meio de um contador i
+function atualizaCronometro(){
+    for(let i = 0; i < contadores.length; i++){
+        contadores[i].textContent = calculaTempo(tempos[i]);
+    }
+}
+
 //função que realiza a atualização ao vivo na página da contagem regressiva em segundos no cronometro.
 function comecaCronometro(){
     atualizaCronometro();
     setInterval(atualizaCronometro,1000); //metodo que usa o parametro de atualização de 1 em 1 seg
 }
 
-//comecaCronometro();
+comecaCronometro();
